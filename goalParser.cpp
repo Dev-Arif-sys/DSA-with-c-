@@ -5,17 +5,13 @@ int main(){
     string command;
     cin >> command;
     string newstr;
-    for(int i=0; i<command.size();){
-        if(command[i]=='G'){
-             newstr=newstr+'G';
-             i=+1;
-        
-        }else if(command[i+1]==')'){
-           newstr +='o';
-           i=+2;
+    for(int i=0; i<command.size();++i){
+        if(command[i]=='('&&command[i+1]==')'){
+           newstr.push_back('o');
+        }else if(command[i]==')' || command[i]=='(' ){
+
         }else{
-              newstr=newstr+"al";
-              i+=4;
+              newstr.push_back(command[i]); 
         }
     }
     cout << newstr;
